@@ -12,8 +12,6 @@ namespace RPS_Server
     class Connection
     {
         private TcpClient client;
-        private readonly Dictionary<string, string> dict;
-
 
         public Connection(TcpClient client)
         {
@@ -34,10 +32,15 @@ namespace RPS_Server
 
 
             var stream = client.GetStream();
-            stream.ReadTimeout = 100;
             var reader = new StreamReader(stream, Encoding.Default);
             var writer = new StreamWriter(stream, Encoding.Default);
+
             writer.AutoFlush = true;
+
+            Eingabe e = new Eingabe(reader, writer);
+            Game game = new Game(e,writer,"Spieler1","Spieler2");
+
+
         }
     }
 }

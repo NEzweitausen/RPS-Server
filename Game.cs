@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,30 +19,31 @@ namespace RPS_Server
         private Random random = new Random();
         private int CountMehrfacherSpielzug = 0;
         private int CountExit = 0;
+        private StreamWriter writer;
 
-        public Game(string spielername1, string spielername2) //Konstruktor
+        public Game(Eingabe e, StreamWriter writer, string spielername1, string spielername2) //Konstruktor
         {
 
             spieler1.SETname(spielername1);
             spieler2.SETname(spielername2);
-
-            userinterface();
+            this.writer = writer;
+            userinterface(e);
         }
 
 
 
-        public void userinterface()
+        public void userinterface(Eingabe e)
         {
 
-            Eingabe e = new Eingabe(); //TCP abfragen erforderlich
+           
             bool running = true;
 
 
             do
             {
-                Console.WriteLine("Sie haben folgende Optionen: \n1 - Schere \n2 - Stein \n3 - Papier");
+                writer.WriteLine("Sie haben folgende Optionen: \n1 - Schere \n2 - Stein \n3 - Papier");
 
-                Console.WriteLine("Geben Sie ihren Zug ein");
+                writer.WriteLine("Geben Sie ihren Zug ein"); //In Eine Anweisung Ändern!!!
 
                 int ZugBenutzer = 0;
                 bool ungültig = false;
@@ -54,7 +56,7 @@ namespace RPS_Server
                     if (ZugBenutzer > 3 || ZugBenutzer < 1)
                     {
                         ungültig = true;
-                        Console.WriteLine("Ungültiger Zug!");
+                        writer.WriteLine("Ungültiger Zug!");
                     }
 
 
@@ -67,30 +69,30 @@ namespace RPS_Server
 
                 if (entschieden == true)
                 {
-                    if (Gegner == Spielzüge.Papier) Console.WriteLine("Der Gegner hat Papier genommen.");
-                    if (Gegner == Spielzüge.Stein) Console.WriteLine("Der Gegner hat sich für Stein entschieden.");
-                    if (Gegner == Spielzüge.Schere) Console.WriteLine("Der Gegner hat Schere gewählt. \n");
+                    if (Gegner == Spielzüge.Papier) writer.WriteLine("Der Gegner hat Papier genommen.");
+                    if (Gegner == Spielzüge.Stein) writer.WriteLine("Der Gegner hat sich für Stein entschieden.");
+                    if (Gegner == Spielzüge.Schere) writer.WriteLine("Der Gegner hat Schere gewählt. \n");
 
-                    if (Benutzer == Spielzüge.Papier) Console.WriteLine("Ihr Zug: Papier");
-                    if (Benutzer == Spielzüge.Stein) Console.WriteLine("Ihr Zug: Stein");
-                    if (Benutzer == Spielzüge.Schere) Console.WriteLine("Ihr Zug: Schere \n");
+                    if (Benutzer == Spielzüge.Papier) writer.WriteLine("Ihr Zug: Papier");
+                    if (Benutzer == Spielzüge.Stein) writer.WriteLine("Ihr Zug: Stein");
+                    if (Benutzer == Spielzüge.Schere) writer.WriteLine("Ihr Zug: Schere \n");
 
                 }
                 else
                 {
-                    Console.WriteLine("Unentschieden!");
+                    writer.WriteLine("Unentschieden!");
                 }
 
-                Console.WriteLine("Der aktuelle Spielstand: \nComputer: " + spieler2.GETspielstand() + "\n" + spieler1.GETname() + ": " + spieler1.GETspielstand() + "\n");
+                writer.WriteLine("Der aktuelle Spielstand: \nComputer: " + spieler2.GETspielstand() + "\n" + spieler1.GETname() + ": " + spieler1.GETspielstand() + "\n");
 
                 CountExit++;
 
                 if (CountExit >= 8)
                 {
-                    Console.WriteLine("Geben Sie zum verlassen des Spiels das Schlüsselwort <exit> ein.");
+                    writer.WriteLine("Geben Sie zum verlassen des Spiels das Schlüsselwort <exit> ein.");
                     if (e.EingabeString() == "exit") 
                     {
-                        //Schlüsselwort "EXIT" an Clients senden - TODO
+                        writer.WriteLine("EXIT");
                         running = false;
                     } 
                     CountExit = 0;
@@ -127,7 +129,7 @@ namespace RPS_Server
                 if (CountMehrfacherSpielzug >= 3)
                 {
 
-                    Console.WriteLine("\nLangweilig... \nDer Computer hat deine Strategie entlarvt.\n");
+                    writer.WriteLine("\nLangweilig... \nDer Computer hat deine Strategie entlarvt.\n");
 
                     if (Benutzer == Spielzüge.Schere) Gegner = Spielzüge.Stein;
                     if (Benutzer == Spielzüge.Stein) Gegner = Spielzüge.Papier;
