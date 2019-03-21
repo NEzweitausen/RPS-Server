@@ -3,3 +3,9 @@ U:\RPS-Server\RPS-Server\bin\Debug\RPS-Server.exe
 U:\RPS-Server\RPS-Server\bin\Debug\RPS-Server.pdb
 U:\RPS-Server\RPS-Server\obj\Debug\RPS-Server.exe
 U:\RPS-Server\RPS-Server\obj\Debug\RPS-Server.pdb
+F:\LF 6 Datenbanken und programmieren\Agiles Projekt LF6\RPS-Server\RPS-Server\bin\Debug\RPS-Server.exe.config
+F:\LF 6 Datenbanken und programmieren\Agiles Projekt LF6\RPS-Server\RPS-Server\obj\Debug\RPS-Server.exe
+F:\LF 6 Datenbanken und programmieren\Agiles Projekt LF6\RPS-Server\RPS-Server\obj\Debug\RPS-Server.pdb
+F:\LF 6 Datenbanken und programmieren\Agiles Projekt LF6\RPS-Server\RPS-Server\bin\Debug\RPS-Server.exe
+F:\LF 6 Datenbanken und programmieren\Agiles Projekt LF6\RPS-Server\RPS-Server\bin\Debug\RPS-Server.pdb
+F:\LF 6 Datenbanken und programmieren\Agiles Projekt LF6\RPS-Server\RPS-Server\obj\Debug\RPS-Server.csprojResolveAssemblyReference.cache
