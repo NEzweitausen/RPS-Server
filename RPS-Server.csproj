@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACIIart.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Eingabe.cs" />
     <Compile Include="Game.cs" />

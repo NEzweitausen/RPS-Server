@@ -41,9 +41,7 @@ namespace RPS_Server
 
             do
             {
-                writer.WriteLine("Sie haben folgende Optionen: \n1 - Schere \n2 - Stein \n3 - Papier");
-
-                writer.WriteLine("Geben Sie ihren Zug ein"); //In Eine Anweisung Ändern!!!
+                writer.WriteLine("Sie haben folgende Optionen: \n1 - Schere \n2 - Stein \n3 - Papier\nGeben Sie ihren Zug ein");
 
                 int ZugBenutzer = 0;
                 bool ungültig = false;

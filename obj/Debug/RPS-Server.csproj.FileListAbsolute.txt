@@ -1,6 +1,5 @@
 U:\RPS-Server\RPS-Server\bin\Debug\RPS-Server.exe.config
 U:\RPS-Server\RPS-Server\bin\Debug\RPS-Server.exe
 U:\RPS-Server\RPS-Server\bin\Debug\RPS-Server.pdb
-U:\RPS-Server\RPS-Server\obj\Debug\RPS-Server.csprojResolveAssemblyReference.cache
 U:\RPS-Server\RPS-Server\obj\Debug\RPS-Server.exe
 U:\RPS-Server\RPS-Server\obj\Debug\RPS-Server.pdb
