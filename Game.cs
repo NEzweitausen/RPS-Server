@@ -67,13 +67,13 @@ namespace RPS_Server
 
                 if (entschieden == true)
                 {
-                    if (Gegner == Spielzüge.Papier) writer.WriteLine("Der Gegner hat Papier genommen.");
-                    if (Gegner == Spielzüge.Stein) writer.WriteLine("Der Gegner hat sich für Stein entschieden.");
-                    if (Gegner == Spielzüge.Schere) writer.WriteLine("Der Gegner hat Schere gewählt. \n");
+                    if (Gegner == Spielzüge.Papier) writer.WriteLine("1PAPIER"); //Spieler 1 ist der Gegner
+                    if (Gegner == Spielzüge.Stein) writer.WriteLine("1STEIN");
+                    if (Gegner == Spielzüge.Schere) writer.WriteLine("1SCHERE");
 
-                    if (Benutzer == Spielzüge.Papier) writer.WriteLine("Ihr Zug: Papier");
-                    if (Benutzer == Spielzüge.Stein) writer.WriteLine("Ihr Zug: Stein");
-                    if (Benutzer == Spielzüge.Schere) writer.WriteLine("Ihr Zug: Schere \n");
+                    if (Benutzer == Spielzüge.Papier) writer.WriteLine("2PAPIER"); //Spieler zwei der jew Nutzer
+                    if (Benutzer == Spielzüge.Stein) writer.WriteLine("2STEIN");
+                    if (Benutzer == Spielzüge.Schere) writer.WriteLine("2SCHERE");
 
                 }
                 else
